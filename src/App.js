@@ -24,8 +24,8 @@ function App() {
             <div className='content'>
               <h1>Body Mass Index Calculator</h1>
               <p className='1'>Enter your height and weight to calculate your BMI.</p>
-              <input class="form-control form-control-lg" type="text" placeholder="weight" aria-label=".form-control-lg example"  onChange={handelPoids} /><br/>
-              <input class="form-control form-control-lg" type="text" placeholder="height" aria-label=".form-control-lg example"   onChange={handelTaille}  /><br/>
+              <input class="form-control form-control-lg" type="text" placeholder="weight kg" aria-label=".form-control-lg example"  onChange={handelPoids} /><br/>
+              <input class="form-control form-control-lg" type="text" placeholder="height cm" aria-label=".form-control-lg example"   onChange={handelTaille}  /><br/>
               <button type="submit" class="btn btn-secondary" onClick={hanedlClick}>Calculate</button>
               <p>{result}</p>
             </div>
