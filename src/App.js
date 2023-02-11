@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import {useState} from 'react'
 import './App.css';
 
 function App() {
+  const [weight,setWeight]=useState()
+  const [height,setHeight]=useState()
+  const [result,setResult]=useState()
+    function handelPoids(e){
+      setWeight(e.target.value)
+    }
+    function handelTaille(e){
+      setHeight(e.target.value)
+    }
+    function hanedlClick(){
+      if(result === isNaN){
+        setResult("enter a valid number")
+      }else{
+        setResult(parseInt(Math.round((weight/(height*height))*10000)))
+      }
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className='container'>
+            <div className='content'>
+              <h1>Body Mass Index Calculator</h1>
+              <p className='1'>Enter your height and weight to calculate your BMI.</p>
+              <input class="form-control form-control-lg" type="text" placeholder="weight" aria-label=".form-control-lg example"  onChange={handelPoids} /><br/>
+              <input class="form-control form-control-lg" type="text" placeholder="height" aria-label=".form-control-lg example"   onChange={handelTaille}  /><br/>
+              <button type="submit" class="btn btn-secondary" onClick={hanedlClick}>Calculate</button>
+              <p>{result}</p>
+            </div>
+        </div>
     </div>
   );
 }
